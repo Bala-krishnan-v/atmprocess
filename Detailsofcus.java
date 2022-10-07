@@ -2,15 +2,15 @@ package atmmachine;
 
 public class Detailsofcus {
 	 private int AccNo;
-	    private String AccountHolder;
+	    private String AccH;
 	    private int Pin;
-	    private int AccountBalance;
+	    private int AccB;
 
-	    public Detailsofcus (int accNo, String accountHolder, int pin, int accountBalance) {
+	    public Detailsofcus (int accNo, String accH, int pin, int accB) {
 	        AccNo = accNo;
-	        AccountHolder = accountHolder;
+	        AccH = accH;
 	        Pin = pin;
-	        AccountBalance = accountBalance;
+	        AccB = accB;
 	    }
 
 	    public int getAccNo() {
@@ -21,12 +21,12 @@ public class Detailsofcus {
 	        AccNo = accNo;
 	    }
 
-	    public String getAccountHolder() {
-	        return AccountHolder;
+	    public String getAccH() {
+	        return AccH;
 	    }
 
-	    public void setAccountHolder(String accountHolder) {
-	        AccountHolder = accountHolder;
+	    public void setAccH(String accH) {
+	        AccH = accH;
 	    }
 
 	    public int getPin() {
@@ -37,21 +37,21 @@ public class Detailsofcus {
 	        Pin = pin;
 	    }
 
-	    public int getAccountBalance() {
-	        return AccountBalance;
+	    public int getAccB() {
+	        return AccB;
 	    }
 
-	    public void setAccountBalance(int accountBalance) {
-	        AccountBalance = accountBalance;
+	    public void setAccB(int accB) {
+	        AccB = accB;
 	    }
 
 	    @Override
 	    public String toString() {
 	        return "CustomerDetails{" +
 	                "AccNo=" + AccNo +
-	                ", AccountHolder='" + AccountHolder + '\'' +
+	                ", AccountHolder='" + AccH + '\'' +
 	                ", Pin=" + Pin +
-	                ", AccountBalance=" + AccountBalance +
+	                ", AccountBalance=" + AccB +
 	                '}';
 	    }
 }
