@@ -21,16 +21,16 @@ public class Originalclass {
     public int checkBalance(int accN,int pin)
     {
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accN && customer.getPin()==pin){
+            if(customer.getAccNo() == accNo && customer.getPin()==pin){
                 return customer.getAccB();
             }
         }
         return 0;
     }
 
-    public boolean withDrawPossible(int accN,int pin,int amt){
+    public boolean withDrawPossible(int accNo,int pin,int amt){
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accN && customer.getPin()==pin && customer.getAccB()>=amt){
+            if(customer.getAccNo() == accNo && customer.getPin()==pin && customer.getAccB()>=amt){
                 customer.setAccB(customer.getAccB()-amt);
                 return true;
             }
@@ -38,9 +38,9 @@ public class Originalclass {
         return false;
     }
 
-    public boolean transferPossible(int accN,int pin,int amt,int otherAccNo){
+    public boolean transferPossible(int accNo,int pin,int amt,int otherAccNo){
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accN && customer.getPin()==pin&&customer.getAccB()>=amt){
+            if(customer.getAccNo() == accNo && customer.getPin()==pin&&customer.getAccB()>=amt){
                 customer.setAccB(customer.getAccB()-amt);
             }
         }
