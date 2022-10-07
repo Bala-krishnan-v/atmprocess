@@ -9,44 +9,44 @@ public class Originalclass {
             new LoadATM(500,10,5000),
             new LoadATM(100,100,10000)
     };
-    static List<LoadATM> Atm_attributes = Arrays.asList(ATM);
-    static Detailsofcus[] customerDetails = {
+    static List<LoadATM> Atm_at = Arrays.asList(ATM);
+    static Detailsofcus[] cD = {
             new Detailsofcus(101,"Suresh",2343,25234),
             new Detailsofcus(102,"Ganesh",5432,34123),
             new Detailsofcus(103,"Magesh",7854,26100),
             new Detailsofcus(104,"Naresh",2345,80000),
             new Detailsofcus(105,"Harish",1907,103400)
     };
-    static List<Detailsofcus> CUS = Arrays.asList(customerDetails);
-    public int checkBalance(int accountNumber,int pin)
+    static List<Detailsofcus> CUS = Arrays.asList(cD);
+    public int checkBalance(int accN,int pin)
     {
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accountNumber && customer.getPin()==pin){
-                return customer.getAccountBalance();
+            if(customer.getAccNo() == accN && customer.getPin()==pin){
+                return customer.getAccB();
             }
         }
         return 0;
     }
 
-    public boolean withDrawPossible(int accountNumber,int pin,int amt){
+    public boolean withDrawPossible(int accN,int pin,int amt){
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accountNumber && customer.getPin()==pin && customer.getAccountBalance()>=amt){
-                customer.setAccountBalance(customer.getAccountBalance()-amt);
+            if(customer.getAccNo() == accN && customer.getPin()==pin && customer.getAccB()>=amt){
+                customer.setAccB(customer.getAccB()-amt);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean transferPossible(int accountNumber,int pin,int amt,int otherAccNo){
+    public boolean transferPossible(int accN,int pin,int amt,int otherAccNo){
         for(Detailsofcus customer : CUS){
-            if(customer.getAccNo() == accountNumber && customer.getPin()==pin&&customer.getAccountBalance()>=amt){
-                customer.setAccountBalance(customer.getAccountBalance()-amt);
+            if(customer.getAccNo() == accN && customer.getPin()==pin&&customer.getAccB()>=amt){
+                customer.setAccB(customer.getAccB()-amt);
             }
         }
         for(Detailsofcus customer : CUS){
             if(customer.getAccNo() == otherAccNo){
-                customer.setAccountBalance(customer.getAccountBalance()+amt);
+                customer.setAccB(customer.getAccB()+amt);
                 return true;
             }
         }
